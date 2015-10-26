@@ -1,0 +1,23 @@
+.navbar-vertical
+    nav class="navbar navbar-inverse navbar-fixed-left"
+      p.centered Logged in as:
+      .nav
+        ul class="nav nav-pills nav-stacked list-group"
+          h4.margin-left-15
+            <span class="label label-default">
+              = current_user.email
+            </span>
+          li role="presentation" = link_to "Home", authenticated_root_path, class: "nav-hover"
+          li role="presentation" = link_to "My albums", albums_path, class: "nav-hover"
+          li role="presentation" = link_to "My photos", user_photos_path, class: "nav-hover"
+          li role="presentation" = link_to "Find photos", photos_path, class: "nav-hover"
+      .nav-offset
+      .margin-left-15
+        br
+        h5 Its personal Photo album
+        p Email:
+        a href="#" Naytlender@gmail.com
+        br
+        h5 c. All rights reserved by localhost:3000
+      .btn-hide
+        <span class="span glyphicon glyphicon-menu-left vertical-centered centered" aria-hidden="true"></span>

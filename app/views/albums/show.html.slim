@@ -1,0 +1,15 @@
+.content class="background panel panel-primary"
+  p class="notice" = notice 
+    = alert
+  
+  h3 = @album.name
+  p User id: 
+  = @album.user_id
+  p Description: 
+  = @album.description
+  p Created at:
+  = @album.created_at
+  br
+  = link_to "Edit ", edit_album_path(@album), class: "btn btn-success"
+  = link_to "Remove", @album, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"
+  = link_to "Back", :back, class: "btn btn-warning"

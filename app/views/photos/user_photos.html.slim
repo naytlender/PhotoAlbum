@@ -1,0 +1,29 @@
+.content class="background panel panel-primary"
+  p class="notice" = notice 
+    = alert
+  h3 My photos
+  .row
+    - @photos.each do |p|
+      .col-md-3 class="col-sm-4 col-xs-6 height200"
+        = image_tag url_for(controller: 'photos', action: 'serve', id: p.id) , class: "index-image", id: "#{p.id}", "data-toggle"=>'modal', "data-target:"=>"#myModal", type: "button", 'data-photoid'=>"#{p.id}", 'data-name'=>"#{p.name.capitalize}"
+        p.name-field = p.name.capitalize
+        = link_to "Open", photo_path(p), class: "btn btn-success"
+        = link_to "Delete", p, method: :delete, class: "btn btn-danger"
+
+    <div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">
+                  </h4>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Add comment</button>
+                </div>
+              </div>
+            </div>
+    </div>

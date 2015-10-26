@@ -1,0 +1,7 @@
+nav class="navbar navbar-inverse nav-fixed-top fixed"
+  .absolute class="blue margin-left-15 logo-div" 
+    - "Photo Album".each_char do |l|
+        p.logo = l
+  .pull-right
+    = link_to "Edit user", edit_user_registration_path, class: "logout btn btn-default"
+    = link_to "Logout", destroy_user_session_path, method: :delete, class: "logout btn btn-default"

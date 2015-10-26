@@ -1,0 +1,10 @@
+.content class="background panel panel-primary"
+  p class="notice" = notice 
+    = alert
+  h3 New Photo
+  = form_for :photo, as: @photo, url: { action: 'create' }, html: { multipart: true } do |f|
+  
+    = f.text_field :name, class: "field", placeholder: "Photo name"
+    br
+    = f.file_field :data, class: "field"
+    = f.submit "Add photo", class: "btn btn-primary photo-btn", content: "3"

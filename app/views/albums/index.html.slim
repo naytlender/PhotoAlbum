@@ -1,0 +1,12 @@
+.content class="background panel panel-primary"
+  p class="notice" = notice 
+    = alert
+  = link_to "New album", new_album_path, class: "btn btn-primary margin-left-15"
+  .panel-body
+    - @albums.each do |a|
+      .col-md-3 class="col-sm-4 col-xs-12 album"
+        h3 = link_to a.name, album_photos_path(a)
+        p = a.description
+        = link_to "Info", album_path(a), class: "btn btn-info"
+        = link_to "Edit ", edit_album_path(a), class: "btn btn-success"
+        = link_to "Remove", @album, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"

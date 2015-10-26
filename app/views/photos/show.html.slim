@@ -1,0 +1,13 @@
+.content class="background panel panel-primary"
+  p class="notice" = notice 
+    = alert
+  <h4>
+    <span class="label label-default">
+      = @photo.name.capitalize
+    </span>
+  </h4>
+  .row
+    = image_tag serve_photo_path(@photo), class: "show-image col-xs-12 col-md-12"
+    .margin-left-15 
+      = link_to "Change", edit_photo_path(@photo), class: "btn btn-success"
+      = link_to "Delete", @photo, controller: :photos, action: :delete, method: :delete, class: "btn btn-danger"

@@ -1,0 +1,10 @@
+.content class="background panel panel-primary"
+  p class="notice" = notice 
+    = alert
+  h3 New Photo
+  = form_for @photo do |f|
+    = f.text_field :name, class: "field", placeholder: "Photo name"
+    br
+    = f.file_field :data, class: "field"
+    br
+    = f.submit "Update", class: "btn btn-primary"

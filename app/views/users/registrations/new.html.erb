@@ -1,0 +1,29 @@
+  <div class="centered sign">
+    <h2>Sign up</h2>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="">
+        <%= f.email_field :email, autofocus: true, class: "field", placeholder: "Email" %>
+      </div>
+
+      <div class="">
+        <br />
+        <% if @minimum_password_length %>
+          <p>(<%= @minimum_password_length %> characters minimum)</p>
+        <% end %>
+        <%= f.password_field :password, autocomplete: "off", class: "field", placeholder: "Password" %>
+      </div>
+
+      <div class="">
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "field", placeholder: "Confirmation" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Sign up", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+
+    <%= render "users/shared/links" %>
+  </div>

@@ -1,0 +1,10 @@
+.content class="background panel panel-primary"
+  p class="notice" = notice
+    = alert
+  h3 Edit album 
+  .panel-body
+    = form_for @album do |a|
+      .form = a.text_field :name, class: "field", placeholder: "Album name"
+      .form = a.text_area :description, class: "field", placeholder: "Description"
+      .form = a.submit "Update", method: :update, class: "btn btn-primary"
+      .form = link_to "Cancel", :back, class: "btn btn-warning"
